@@ -134,9 +134,105 @@ After gathering feedback from the server team, the policy is revised, addressing
 
 The team collaborates with the server team to initiate scheduled credential scans. A compromise is reached to scan a single server first, monitoring resource impact, and using just-in-time Active Directory credentials for secure, controlled access.  
 
-<a href='https://youtu.be/lg068WA4SKM' target="_"><img width="600" alt="image" src="https://github.com/user-attachments/assets/31fe8d0f-636b-475b-8d5a-a2795c183f86"></a>
+### Meeting Notes: Sam and Bob – Vulnerability Scanning Setup
 
-[YouTube Video: Initial Discovery Scan](https://youtu.be/lg068WA4SKM)
+**Participants:** Sam, Bob  
+**Topic:** Planning and initiating credentialed vulnerability scans
+
+---
+
+## Summary
+
+Sam and Bob discussed the next step in the vulnerability management program: conducting scheduled credentialed vulnerability scans across the server infrastructure. Sam explained how the scans work and why administrative credentials are required to properly assess systems.
+
+Bob raised concerns about potential server performance impact and the security risks of providing administrative credentials for all machines. To address these concerns, they agreed to begin with a **single-server test scan** and monitor resource utilization.
+
+They also discussed creating **temporary Active Directory credentials** that would only be enabled during scans to reduce security risk.
+
+---
+
+## Key Decisions
+
+- Vulnerability scans will be conducted **weekly** across the server infrastructure.
+- Initial scans will be **credentialed scans** to provide deeper vulnerability detection.
+- A **test scan on a single server** will be performed first to monitor system impact.
+- Administrative credentials will be handled using a **temporary Active Directory account**.
+- The account will follow a **just-in-time access approach**:
+  - Disabled by default  
+  - Enabled only during scans  
+  - Disabled or deprovisioned after scanning completes
+
+---
+
+## Action Items
+
+- **Sam:** Prepare and schedule the initial vulnerability scan.
+- **Bob:** Coordinate the creation of a temporary Active Directory account for scanning.
+- **Susan:** Automate the provisioning and disabling of the scanning credentials.
+- **Both:** Monitor server performance during the initial test scan.
+
+---
+
+## Conversation
+
+**Bob:**  
+Morning, Sam.
+
+**Sam:**  
+Good morning. I heard you're ready to conduct some scans.
+
+**Bob:**  
+Yep. Now that our vulnerability management policy is in place, I wanted to start conducting some scheduled credentialed scans of your environment.
+
+**Sam:**  
+Sounds good to me. What’s involved? How can we help?
+
+**Bob:**  
+We’re planning to schedule weekly scans of the server infrastructure. We estimate it will take about **4–6 hours to scan all 200 assets**.  
+
+We’ll need you to provide some **administrative credentials** so the scan engine can remotely log into the targets and better assess them.
+
+**Sam:**  
+Whoa, hold on. What does scanning actually entail? I’m a bit worried about resource utilization. Also, you want admin credentials to all 200 machines? That doesn’t sound very safe.
+
+**Bob:**  
+Those are valid concerns. The scan engine sends various types of traffic to the servers to check for specific vulnerabilities.  
+
+This includes things like:
+- Checking the registry
+- Identifying outdated software
+- Detecting insecure protocols or cipher suites
+
+That’s why credentials are required—it allows the scanner to perform deeper checks.
+
+**Sam:**  
+I see. Well, as long as it doesn’t bring the servers offline, we should be okay.
+
+**Bob:**  
+Absolutely. Let’s start by scanning **a single server** and monitor the resource utilization.
+
+**Sam:**  
+Not a bad idea.
+
+**Bob:**  
+Great. Also, for the credentials, could you set up something in **Active Directory** for us?  
+
+You could leave the account disabled until we’re ready to scan. Then enable it during the scan and disable or deprovision it afterward—kind of like a **just-in-time access** setup.
+
+**Sam:**  
+That sounds good. I’ll ask Susan to start working on the automation for provisioning the account.
+
+**Bob:**  
+Awesome. Okay, talk soon.
+
+**Sam:**  
+Sounds good. I’ll get back to you once the credentials are set up.
+
+**Bob:**  
+See you later.
+
+**Sam:**  
+See you later.
 
 ---
 
