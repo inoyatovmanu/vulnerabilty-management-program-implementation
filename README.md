@@ -124,9 +124,7 @@ See you later.
 
 After gathering feedback from the server team, the policy is revised, addressing aggressive remediation timelines. With final approval from upper management, the policy now guides the program, ensuring compliance and reference for pushback resolution.  
 [Finalized Policy](https://docs.google.com/document/d/1rvueLX_71pOR8ldN9zVW9r_zLzDQxVsnSUtNar8ftdg/edit?usp=drive_link)
-<div style="text-align: center;">
-    <img src="https://github.com/user-attachments/assets/9afcdbc1-0493-4af2-9287-1cb9b8f59b40" alt="image" width="400">
-</div>
+
 
 ---
 
@@ -240,9 +238,10 @@ See you later.
 
 In this phase, an insecure Windows Server is provisioned to simulate the server team's environment. After creating vulnerabilities, an authenticated scan is performed, and the results are exported for future remediation steps.  
 
-<img width="635" alt="image" src="https://github.com/user-attachments/assets/937cccbd-36bb-4445-97b9-e915085cda81" style="border: 2px solid black;">
+<img width="743" height="634" alt="Screen Shot 2026-03-08 at 5 17 23 PM" src="https://github.com/user-attachments/assets/dc51d035-f178-4388-93ff-8f60a2876ddd" />
 
-[Scan 1 - Initial Scan](https://drive.google.com/file/d/1RBPVj_azKJMwmRZ8QILlb4hxIjQU3wQ7/view?usp=drive_link)
+
+[Scan 1 - Initial Scan](https://drive.google.com/file/d/1cAbKpe7dHbP_yywmFRq0RRYN0sn9YHUB/view)
 
 
 
