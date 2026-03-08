@@ -50,9 +50,73 @@ This phase focuses on drafting a Vulnerability Management Policy as a starting p
 
 In this phase, a meeting with the server team introduces the draft Vulnerability Management Policy and assesses their capability to meet remediation timelines. Feedback leads to adjustments, like extending the critical remediation window from 48 hours to one week, ensuring collaborative implementation.
 
-<a href='https://youtu.be/8g6uafc6LjE' target="_"><img width="600" alt="image" src="https://github.com/user-attachments/assets/549d21f4-26c2-412d-9117-d7b6835aedbf"></a>
+# Vulnerability Remediation Policy Discussion
 
-[YouTube Video: Stakeholder Policy Buy-In Meeting](https://youtu.be/8g6uafc6LjE)
+**Participants:** Bob, Sam  
+**Topic:** Remediation timelines for vulnerability management policy
+
+---
+
+## Summary
+
+Bob and Sam discussed the proposed vulnerability remediation policy, focusing on whether the current timelines are realistic given existing staffing levels. Bob raised concerns about the aggressive **48-hour remediation window for critical vulnerabilities**, noting that the current team may not be able to consistently meet that target.
+
+Sam acknowledged the concern and suggested a compromise approach to allow teams time to adjust to the new policy.
+
+---
+
+## Key Decisions
+
+- The **48-hour remediation window** may be too aggressive for normal operations.
+- A **one-week remediation window for critical vulnerabilities** will be considered as a more practical starting point.
+- The **48-hour timeline will be reserved for severe cases**, such as **zero-day vulnerabilities**.
+- Departments will receive **approximately six months to adjust** after the policy is finalized.
+
+---
+
+## Action Items
+
+- **Sam:** Update the policy draft to reflect the proposed remediation timeline adjustments.
+- **Bob:** Begin preparing the team for the new remediation and patching process.
+- **Both:** Continue collaboration during the policy rollout period.
+
+---
+
+## Conversation
+**Sam:**  
+Hey, morning Bob. How has everything been recently? I know everyone’s been busy these last few weeks.
+
+**Bob:**  
+Good morning, Sam. Yeah, it’s been a bit hectic, but we’re hanging in there. Thanks for asking.  
+
+I had a chance to read through the policy draft, and overall it makes sense. However, with our current staffing, we can’t meet the aggressive remediation timelines—especially the **48-hour window for critical vulnerabilities**.
+
+**Sam:**  
+Yeah, I totally understand. It is a bit aggressive, especially to start. Perhaps we can extend the critical remediation window to **one week**. That might be a good compromise for now. Then we can reserve the **48-hour window** for truly severe cases, like **zero-day vulnerabilities**.
+
+**Bob:**  
+Yeah, that sounds reasonable. We appreciate the flexibility. Can we also have a bit of leeway in the beginning as we get used to the remediation and patching process—just for the first few months?
+
+**Sam:**  
+Absolutely. After the policy is finalized, we’ll officially start the program. We’re planning to give all departments about **six months to adjust** and get comfortable with the new process.
+
+**Bob:**  
+Thanks, Sam. We’ll do our best. I appreciate you including us in the decision-making process. It really helps us feel like we’re part of the solution.
+
+**Sam:**  
+Of course. We’re all in this together. Thanks for working with us.
+
+**Bob:**  
+No problem. Thanks for the short meeting.
+
+**Sam:**  
+Yeah, those are my favorite types.
+
+**Bob:**  
+Bye now.
+
+**Sam:**  
+See you later.
 
 ---
 
