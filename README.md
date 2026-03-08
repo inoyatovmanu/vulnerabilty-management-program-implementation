@@ -50,7 +50,7 @@ This phase focuses on drafting a Vulnerability Management Policy as a starting p
 
 In this phase, a meeting with the server team introduces the draft Vulnerability Management Policy and assesses their capability to meet remediation timelines. Feedback leads to adjustments, like extending the critical remediation window from 48 hours to one week, ensuring collaborative implementation.
 
-# Vulnerability Remediation Policy Discussion
+### Vulnerability Remediation Policy Discussion
 
 **Participants:** Bob, Sam  
 **Topic:** Remediation timelines for vulnerability management policy
