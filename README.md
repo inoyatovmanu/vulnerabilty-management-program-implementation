@@ -273,9 +273,117 @@ The server team received remediation scripts and scan reports to address key vul
 
 The server team reviewed vulnerability scan results, identifying outdated software, insecure accounts, and deprecated protocols. The remediation packages were prepared for submission to the Change Control Board (CAB). 
 
-<a href="https://youtu.be/0tjjFewxSNw" target="_"><img width="600" src="https://github.com/user-attachments/assets/03027c66-5f7c-42d0-b6dd-09d053c040b1"/></a>
+### Meeting Notes: Sam and Bob – Vulnerability Scan Results Review
 
-[Meeting Video](https://youtu.be/0tjjFewxSNw)
+**Participants:** Sam, Bob  
+**Topic:** Review of vulnerability scan results and remediation planning
+
+---
+
+## Summary
+
+Sam and Bob reviewed the results of the first vulnerability scan conducted on the server environment. The scan completed successfully with **no outages or resource utilization issues**, confirming that the scanning process does not significantly impact system performance.
+
+Most identified vulnerabilities were related to **outdated software**, particularly an old installation of Wireshark. Additional findings included deprecated cryptographic protocols, weak cipher suites, and a misconfigured **guest account with administrative privileges**.
+
+They discussed potential remediation strategies and confirmed that **Windows Update and existing patch management** should automatically resolve some vulnerabilities. Other issues will require manual remediation and change control approval.
+
+---
+
+## Key Decisions
+
+- The vulnerability scan **did not negatively impact server performance**.
+- Several vulnerabilities were caused by **outdated Wireshark installations**.
+- The **local guest account belonging to the Administrators group** must be removed.
+- Deprecated protocols **TLS 1.0 and TLS 1.1** and weak cipher suites should be disabled.
+- Some vulnerabilities related to **Microsoft Edge and Windows components** may be resolved through the existing patch management system.
+- Remediation tasks will be reviewed through the **Change Control Board** before deployment.
+
+---
+
+## Action Items
+
+- **Bob:** Develop remediation packages for identified vulnerabilities.
+- **Sam:** Coordinate remediation tasks through the Change Control Board.
+- **Sam:** Investigate why Wireshark and the guest administrator configuration exist on servers.
+- **Bob:** Research best practices for disabling weak cipher suites and deprecated TLS protocols.
+- **Both:** Review remediation progress during the next meeting.
+
+---
+
+## Conversation
+
+**Bob:**  
+Morning, Sam. How are you doing?
+
+**Sam:**  
+Not bad for a Monday. How about you?
+
+**Bob:**  
+I’m still alive, so I can’t complain. Before we get into the vulnerabilities, how did the scan go on your end? Did you notice any outages or resource overutilization?
+
+**Sam:**  
+The scan went well. We monitored the servers during the process, and aside from seeing a large number of open connections, we wouldn’t have known a scan was taking place.
+
+**Bob:**  
+That’s good news. I expected it to run smoothly, but we can keep monitoring going forward. I don’t anticipate any resource utilization issues.
+
+Do you mind if I walk through the vulnerability findings?
+
+**Sam:**  
+Absolutely.
+
+**Bob:**  
+Most of the vulnerabilities are related to **Wireshark being installed and severely outdated**. That accounts for the majority of these findings.
+
+One interesting thing I noticed is that the **local guest account on the servers belongs to the Administrators group**. I’m not sure why that configuration exists.
+
+Some other vulnerabilities might automatically resolve through **Windows Updates**, such as the Microsoft Edge Chromium findings. I’m not completely certain about all of them, but patch management may address some.
+
+We don’t need to worry about the **self-signed certificate finding**, since it’s simply the system’s self-generated certificate.
+
+However, the **medium-strength cipher suites and deprecated protocols like TLS 1.0 and TLS 1.1** should definitely be remediated.
+
+So the primary issues we need to address are:
+- Outdated Wireshark installations  
+- Deprecated protocols and cipher suites  
+- Removing the guest account from the Administrators group
+
+**Sam:**  
+That’s interesting. The good news is that most of our servers likely share the same configuration, so they probably have the same vulnerabilities. Hopefully that will make remediation easier.
+
+**Bob:**  
+Yes, that actually helps a lot. If the environment is consistent, remediation can be applied uniformly.
+
+Do you foresee any issues with fixing the cipher suites or disabling the deprecated protocols?
+
+**Sam:**  
+I don’t expect any major issues. We’ll run the changes through the **Change Control Board** first.
+
+Uninstalling Wireshark and correcting the guest account configuration should be straightforward since those shouldn’t be on production servers anyway. I’ll need to talk to our system administrators about that.
+
+**Bob:**  
+That’s good news. I’ll start building **remediation packages** to make deployment easier for your team.
+
+**Sam:**  
+That would be great.
+
+Actually, I wanted to ask—do you already have something in place to handle vulnerabilities related to Windows updates? For example, a patch management system?
+
+**Bob:**  
+Yes, we do. Windows updates should be handled automatically by next week through our **patch management process**, so I’m not too concerned about those.
+
+**Sam:**  
+Excellent.
+
+**Bob:**  
+I’ll start researching the best ways to remediate these findings and get back to you before the next Change Control Board meeting.
+
+**Sam:**  
+Sounds good. Talk to you soon.
+
+**Bob:**  
+Talk to you soon.
 
 ---
 
@@ -283,9 +391,82 @@ The server team reviewed vulnerability scan results, identifying outdated softwa
 
 The Change Control Board (CAB) reviewed and approved the plan to remove insecure protocols and cipher suites. The plan included a rollback script and a tiered deployment approach.  
 
-<a href="https://youtu.be/zOFPkTa9kY8" target="_"><img width="600" src="https://github.com/user-attachments/assets/07164e63-fbce-471a-b469-29a6d41b7bb8"/></a>
+### Meeting Notes: Vulnerability Remediation – Protocol and Cipher Updates
 
-[Meeting Video](https://youtu.be/zOFPkTa9kY8)
+**Participants:** Sam, Bob, John, Fred  
+**Topic:** Removal of insecure protocols and cipher suites on servers
+
+---
+
+## Summary
+
+During the weekly change approval meeting, the team reviewed remediation actions related to **insecure protocols and cipher suites** discovered during vulnerability scanning.
+
+Bob explained that older cryptographic protocols and cipher suites allow systems to negotiate deprecated encryption methods when communicating with other servers. To address this issue, a **PowerShell script** was developed to automatically disable insecure protocols and enable only modern, secure standards.
+
+The team also discussed deployment safety. A **tiered deployment strategy** will be used, starting with a small pilot group before progressing to production systems. In addition, an **automated rollback script** has been created to restore the original configuration if issues arise.
+
+---
+
+## Key Decisions
+
+- Insecure protocols and cipher suites will be **disabled via automated remediation scripts**.
+- The remediation will be deployed using a **tiered rollout strategy**:
+  - Pilot group
+  - Pre-production environment
+  - Full production deployment
+- A **rollback script** is available to restore original registry settings if problems occur.
+- Changes will be implemented using **Windows registry updates through PowerShell automation**.
+
+---
+
+## Action Items
+
+- **Bob:** Finalize and validate the PowerShell remediation scripts.
+- **Sam:** Coordinate the rollout through the change management process.
+- **John:** Monitor pilot systems for potential compatibility issues.
+- **Fred:** Verify rollback procedures and assist with deployment monitoring.
+
+---
+
+## Conversation
+
+**Sam:**  
+Okay, next on the list are a couple of vulnerability remediations for the server team: removal of insecure protocols and removal of insecure cipher suites.  
+
+It looks like Bob from the risk team has been working with Sam from infrastructure on this. Sam, do you want to walk us through the technical aspects of the change?
+
+**Sam:**  
+Normally I would, but would you mind letting Bob explain this one? He actually built the solution for us, and we’re still getting used to the process.
+
+**Bob:**  
+Sure, I can explain.  
+
+The presence of insecure cipher suites and protocols on a system means the machine is capable of negotiating deprecated encryption algorithms or communication protocols. If it connects to a server that only supports those older standards, the system could potentially use them.
+
+These configurations are controlled through the **Windows registry**. The remediation is actually very straightforward. We created a **PowerShell script** that disables all insecure protocols and cipher suites while enabling only modern, secure standards.
+
+**John:**  
+That sounds good, but what happens if something goes wrong? Do we have a rollback plan?
+
+**Bob:**  
+Yes, absolutely. First, we’re using a **tiered deployment strategy**. That means we’ll start with a small **pilot group**, then move to **pre-production**, and finally to **full production deployment**.
+
+In addition, we created a fully automated **rollback script** for each remediation. If any issues occur, the script restores the original protocol and cipher settings automatically.
+
+**Fred:**  
+That sounds reasonable. Since these fixes are simple registry updates, I’m not too concerned.
+
+**Bob:**  
+Exactly. It’s a straightforward change.
+
+**Sam:**  
+Any more questions from anyone?
+
+Alright, that wraps things up for this week’s meeting. See you all next week.
+
+**Everyone:**  
+See you later.
 
 ---
 ### Step 10 ) Remediation Effort
