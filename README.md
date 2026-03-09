@@ -39,14 +39,14 @@ _**Completion State:**_ a formal policy is enacted, stakeholder buy-in is secure
 
 ---
 
-### Vulnerability Management Policy Draft Creation
+## Step 1) Vulnerability Management Policy Draft Creation
 
 This phase focuses on drafting a Vulnerability Management Policy as a starting point for stakeholder engagement. The initial draft outlines scope, responsibilities, and remediation timelines, and may be adjusted based on feedback from relevant departments to ensure practical implementation before final approval by upper management.  
 [Draft Policy](https://docs.google.com/document/d/1CLSWm1_9JL1oUqgyNNwtPXW6FzXJ7ddVnSAUQTyqC8I/edit?usp=drive_link)
 
 ---
 
-### Step 2) Mock Meeting: Policy Buy-In (Stakeholders)
+## Step 2) Mock Meeting: Policy Buy-In (Stakeholders)
 
 In this phase, a meeting with the server team introduces the draft Vulnerability Management Policy and assesses their capability to meet remediation timelines. Feedback leads to adjustments, like extending the critical remediation window from 48 hours to one week, ensuring collaborative implementation.
 
@@ -120,7 +120,7 @@ See you later.
 
 ---
 
-### Step 3) Policy Finalization and Senior Leadership Sign-Off
+## Step 3) Policy Finalization and Senior Leadership Sign-Off
 
 After gathering feedback from the server team, the policy is revised, addressing aggressive remediation timelines. With final approval from upper management, the policy now guides the program, ensuring compliance and reference for pushback resolution.  
 [Finalized Policy](https://docs.google.com/document/d/1rvueLX_71pOR8ldN9zVW9r_zLzDQxVsnSUtNar8ftdg/edit?usp=drive_link)
@@ -128,7 +128,7 @@ After gathering feedback from the server team, the policy is revised, addressing
 
 ---
 
-### Step 4) Mock Meeting: Initial Scan Permission (Server Team)
+## Step 4) Mock Meeting: Initial Scan Permission (Server Team)
 
 The team collaborates with the server team to initiate scheduled credential scans. A compromise is reached to scan a single server first, monitoring resource impact, and using just-in-time Active Directory credentials for secure, controlled access.  
 
@@ -234,7 +234,7 @@ See you later.
 
 ---
 
-### Step 5) Initial Scan of Server Team Assets
+## Step 5) Initial Scan of Server Team Assets
 
 In this phase, an insecure Windows Server is provisioned to simulate the server team's environment. After creating vulnerabilities, an authenticated scan is performed, and the results are exported for future remediation steps.  
 
@@ -248,7 +248,7 @@ In this phase, an insecure Windows Server is provisioned to simulate the server 
 
 ---
 
-### Step 6) Vulnerability Assessment and Prioritization
+## Step 6) Vulnerability Assessment and Prioritization
 
 We assessed vulnerabilities and established a remediation prioritization strategy based on ease of remediation and impact. The following priorities were set:
 
@@ -259,7 +259,7 @@ We assessed vulnerabilities and established a remediation prioritization strateg
 
 ---
 
-### Step 7) Distributing Remediations to Remediation Teams
+## Step 7) Distributing Remediations to Remediation Teams
 
 The server team received remediation scripts and scan reports to address key vulnerabilities. This streamlined their efforts and prepared them for a follow-up review.  
 
@@ -269,7 +269,7 @@ The server team received remediation scripts and scan reports to address key vul
 
 ---
 
-### Step 8) Mock Meeting: Post-Initial Discovery Scan (Server Team)
+## Step 8) Mock Meeting: Post-Initial Discovery Scan (Server Team)
 
 The server team reviewed vulnerability scan results, identifying outdated software, insecure accounts, and deprecated protocols. The remediation packages were prepared for submission to the Change Control Board (CAB). 
 
@@ -387,7 +387,7 @@ Talk to you soon.
 
 ---
 
-### Step 9) Mock CAB Meeting: Implementing Remediations
+## Step 9) Mock CAB Meeting: Implementing Remediations
 
 The Change Control Board (CAB) reviewed and approved the plan to remove insecure protocols and cipher suites. The plan included a rollback script and a tiered deployment approach.  
 
@@ -469,7 +469,7 @@ Alright, that wraps things up for this week’s meeting. See you all next week.
 See you later.
 
 ---
-### Step 10 ) Remediation Effort
+## Step 10 ) Remediation Effort
 
 #### Remediation Round 1: Outdated Wireshark Removal
 
